@@ -5,6 +5,7 @@ export default async function PostPage() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
 
   const posts: Post[] = await response.json();
+  const todayDate = Date.now().toString();
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -12,7 +13,7 @@ export default async function PostPage() {
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-2xl font-bold text-gray-800">Post Title</h1>
           <Link href="/" className="text-blue-600">
-            Back to home
+            Back to home {todayDate}
           </Link>
         </div>
       </header>

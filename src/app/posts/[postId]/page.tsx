@@ -1,6 +1,8 @@
 import type { Post } from "@/types/PostProps";
 import Link from "next/link";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const posts: Post[] = await fetch(
     "https://jsonplaceholder.typicode.com/posts",
@@ -15,6 +17,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.postId}`,
   );
+  const todayDate = Date.now().toString();
 
   const post: Post = await response.json();
 
@@ -25,7 +28,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
         <p className="text-gray-700">{post.body}</p>
       </div>
       <Link className="mt-4 hover:text-blue-500" href="/posts">
-        Go Back
+        Go Back {todayDate}
       </Link>
     </div>
   );
