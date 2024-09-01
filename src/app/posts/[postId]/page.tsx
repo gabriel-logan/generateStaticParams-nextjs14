@@ -1,5 +1,6 @@
-import type { Post } from "@/types/PostProps";
 import Link from "next/link";
+
+import type { Post } from "@/types/PostProps";
 
 export async function generateStaticParams() {
   const posts: Post[] = await fetch(
@@ -24,7 +25,7 @@ export default async function Post({ params }: { params: { postId: string } }) {
         <h1 className="mb-4 text-4xl font-bold text-blue-600">{post.title}</h1>
         <p className="text-gray-700">{post.body}</p>
       </div>
-      <Link className="mt-4 hover:text-blue-500" href="/posts">
+      <Link className="mt-4 text-black hover:text-blue-500" href="/posts">
         Go Back
       </Link>
     </div>

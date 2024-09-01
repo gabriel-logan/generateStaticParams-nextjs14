@@ -1,5 +1,6 @@
-import type { Post } from "@/types/PostProps";
 import Link from "next/link";
+
+import type { Post } from "@/types/PostProps";
 
 export default async function PostPage() {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -11,7 +12,7 @@ export default async function PostPage() {
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-2xl font-bold text-gray-800">Post Title</h1>
-          <Link href="/" className="text-blue-600">
+          <Link href="/" className="text-blue-600 hover:underline">
             Back to home
           </Link>
         </div>
@@ -23,7 +24,7 @@ export default async function PostPage() {
               <Link
                 href={`/posts/${post.id}`}
                 key={post.id}
-                className="rounded-lg bg-white p-6 shadow"
+                className="rounded-lg bg-white p-6 shadow transition-transform hover:scale-110 active:scale-100"
               >
                 <h2 className="text-lg font-bold text-gray-800">
                   {post.title}
