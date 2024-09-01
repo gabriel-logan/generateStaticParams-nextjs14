@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  assetPrefix: "/generateStaticParams-nextjs14",
-  basePath: "/generateStaticParams-nextjs14",
+  assetPrefix:
+    process.env.NEXT_PUBLIC_NODE_ENV === "development"
+      ? undefined
+      : "/generateStaticParams-nextjs14",
+  basePath:
+    process.env.NEXT_PUBLIC_NODE_ENV === "development"
+      ? undefined
+      : "/generateStaticParams-nextjs14",
 };
 
 export default nextConfig;
