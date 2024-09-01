@@ -12,7 +12,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Post({ params }: { params: { postId: string } }) {
+export default async function PostIdPage({
+  params,
+}: {
+  params: { postId: string };
+}) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.postId}`,
   );
