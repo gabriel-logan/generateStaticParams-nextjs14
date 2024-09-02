@@ -10,10 +10,19 @@ export default async function PostPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-gray-800">Post Title</h1>
+        <div className="container mx-auto flex flex-col gap-1 px-4 py-6">
+          <h1 className="text-2xl font-bold text-gray-800">
+            Posts Title and Body
+          </h1>
           <Link href="/" className="text-blue-600 hover:underline">
             Back to home
+          </Link>
+          <Link
+            className="text-black hover:underline"
+            target="_blank"
+            href="https://github.com/gabriel-logan/generateStaticParams-nextjs14"
+          >
+            Back to github
           </Link>
         </div>
       </header>
@@ -27,7 +36,7 @@ export default async function PostPage() {
                 className="rounded-lg bg-white p-6 shadow transition-transform hover:scale-110 active:scale-100"
               >
                 <h2 className="text-lg font-bold text-gray-800">
-                  {post.title}
+                  PostId: {post.id} - {post.title}
                 </h2>
                 <p className="text-gray-700">{post.body}</p>
               </Link>

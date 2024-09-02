@@ -29,7 +29,7 @@ export default async function PostIdPage({
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-2 sm:px-0">
       <div className="w-full rounded bg-white p-10 shadow-lg sm:w-1/2">
         <h1 className="mb-4 text-2xl font-bold text-blue-600 sm:text-3xl">
-          {post.title}
+          PostId: {post.id} - {post.title}
         </h1>
         <p className="text-sm text-gray-700 sm:text-base md:text-lg">
           {post.body}
